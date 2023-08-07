@@ -26,8 +26,7 @@ public class DBCon {
 		}
 		return null;
 	}
+	
 	public static void main(String[] args) {
-		Connection con = getCon();
-		System.out.println(con);
 	}
 }
