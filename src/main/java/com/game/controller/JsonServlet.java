@@ -24,7 +24,7 @@ public class JsonServlet extends HttpServlet{
 		String json = gson.toJson(map);
 	    response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
+		PrintWriter out = response.getWriter(); 
 		out.print(json);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
