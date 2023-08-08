@@ -19,12 +19,14 @@
 					<property name="url" value="jdbc:mariadb://localhost:3306/game"/>
 					<property name="username" value="KDTEST"/>
 					<property name="password" value="kd1824java"/>
+					
 				</dataSource>
 		</environment>
 		
 	</environments>
 	<mappers>
 		<mapper resource="mybatis/BoardInfoMapper.xml"/> 
+		<mapper resource="mybatis/UserInfoMapper.xml"/> 
 	</mappers>
 	
 </configuration>
