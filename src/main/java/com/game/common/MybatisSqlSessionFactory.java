@@ -35,6 +35,8 @@ public class MybatisSqlSessionFactory {
 			SqlSession session = ssf.openSession();
 			UserInfoMapper uiMapper = session.getMapper(UserInfoMapper.class);
 			List<UserInfoVO> list = uiMapper.selectUserInfoList(null);
+		//	TestInfoMapper tiMapper = session.getMapper(TestInfoMapper.class);
+		//	List<TestInfoVO> list = tiMapper.selectUserInfoList(null);
 			System.out.println(list);
 		}
 	}

@@ -37,6 +37,6 @@
  	</update>
  	
  	<delete id="deleteBoardInfo" parameterType="com.game.vo.BoardInfoVO">
- 		DELETE FROM  BOARD_INFO WHERE BI_NUM=#{biNum}                                                                                                                                                                                                                                                    BOARD_INFO WHERE BI_NUM=#{biNum}
+ 		DELETE FROM  BOARD_INFO WHERE BI_NUM=#{biNum} BOARD_INFO WHERE BI_NUM=#{biNum}
  	</delete>
 </mapper>

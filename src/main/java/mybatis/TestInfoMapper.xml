@@ -1,0 +1,37 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.game.mapper.TestInfoMapper">
+
+    <select id="selectTestInfoList" resultType="com.game.vo.TestInfoVO">
+        SELECT * FROM test_info
+
+        <where>
+        	<if test='searchStr != null and searchStr != ""'>
+        		<if test='searchType=="1" or searchType=="2" '>
+        			OR TI_NAME LIKE CONCAT('%',#{searchStr},'%')
+        		</if>
+        		<if test='searchType=="1" or searchType=="2"'>
+        			OR TI_DESC LIKE CONCAT('%',#{searchStr},'%')
+        		</if>
+        	</if>
+        </where>
+    </select>
+    <select id="selectTestInfo" resultType="com.game.vo.TestInfoVO">
+    	SELECT * FROM TEST_INFO WHERE TI_NUM=#{tiNum}
+    </select>
+ 	<insert id="insertTestInfo" parameterType="com.game.vo.TestInfoVO">
+ 		INSERT INTO TEST_INFO(TI_NAME, TI_DESC)
+ 		VALUES(#{tiName}, #{tiDesc})
+ 	</insert>
+ 	<update id="updateTestInfo" parameterType="com.game.vo.TestInfoVO">
+ 		UPDATE TEST_INFO
+ 		SET TI_NAME=#{TiName},
+ 		TI_DESC=#{TiDesc}
+ 	</update>
+ 	
+ 	<delete id="deleteTestInfo" parameterType="com.game.vo.TestInfoVO">
+ 		DELETE FROM  TEST_INFO WHERE TI_NUM=#{tiNum} TEST_INFO WHERE TI_NUM=#{tiNum}
+ 	</delete>
+</mapper>
